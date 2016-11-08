@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 
 class watki {
 
-    public static final int FIBONACCI_NUM_TO_CALCULATE = 45;
+    public static final int FIBONACCI_NUM_TO_CALCULATE = 40;
     public static final int IERATIONS_NUM = 8;
 
     public static long fibonacci(int n) {
@@ -30,7 +30,7 @@ class watki {
 
     private static void single_test(int fibonacci_num_to_calculate, int num_of_iterations) {
         IntStream.range(0, num_of_iterations).forEachOrdered(n ->
-            System.out.println(fibonacci(fibonacci_num_to_calculate))
+            System.out.println(fibonacci(fibonacci_num_to_calculate+n))
         );
     }
 
@@ -39,7 +39,7 @@ class watki {
         List<Callable<Long>> methods_to_call = new LinkedList<>();
 
         IntStream.range(0, num_of_iterations).forEachOrdered(n ->
-        methods_to_call.add(()->fibonacci(fibonacci_num_to_calculate))
+        methods_to_call.add(()->fibonacci(fibonacci_num_to_calculate+n))
         );
 
         executor.invokeAll(methods_to_call)
