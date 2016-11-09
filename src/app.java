@@ -1,9 +1,9 @@
 
 import java.util.stream.IntStream;
 
-class watki {
+class MultiThreadTest {
 
-    public static final int FIBONACCI_NUM_TO_CALCULATE = 30;
+    public static final int FIBONACCI_NUM_TO_CALCULATE = 32;
     public static final int IERATIONS_NUM = 15;
 
     public static long fibonacci(int n) {
