@@ -11,9 +11,9 @@ class MultiThreadTest {
         else return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    private static void calculate_fibonnacci(int fibonacci_num_to_calculate, int n) {
+    private static void calculate_fibonnacci(int fibonacci_num_to_calculate) {
         long startTime = System.currentTimeMillis();
-        System.out.println("RESULT: " + fibonacci(fibonacci_num_to_calculate + n) + " TIME:" + (System.currentTimeMillis() - startTime));
+        System.out.println("RESULT: " + fibonacci(fibonacci_num_to_calculate) + " TIME:" + (System.currentTimeMillis() - startTime));
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -32,14 +32,14 @@ class MultiThreadTest {
 
     private static void run_single_thread_test(int fibonacci_num_to_calculate, int num_of_iterations) {
         IntStream.range(0, num_of_iterations).forEach(n ->
-                calculate_fibonnacci(fibonacci_num_to_calculate, n)
+                calculate_fibonnacci(fibonacci_num_to_calculate + n)
         );
     }
 
 
     private static void run_multithread_test(int fibonacci_num_to_calculate, int num_of_iterations) {
         IntStream.range(0, num_of_iterations).parallel().forEach(n ->
-                calculate_fibonnacci(fibonacci_num_to_calculate, n)
+                calculate_fibonnacci(fibonacci_num_to_calculate + n)
         );
 
     }
