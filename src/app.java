@@ -14,7 +14,7 @@ class watki {
     public static void main(String[] args) throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
-        run_multithread_test(FIBONACCI_NUM_TO_CALCULATE,  IERATIONS_NUM);
+        run_multithread_test(FIBONACCI_NUM_TO_CALCULATE, IERATIONS_NUM);
         System.out.println(" MULTI TIME: " + (System.currentTimeMillis() - startTime));
 
         startTime = System.currentTimeMillis();
@@ -26,7 +26,7 @@ class watki {
 
     private static void run_single_thread_test(int fibonacci_num_to_calculate, int num_of_iterations) {
         IntStream.range(0, num_of_iterations).forEach(n ->
-            System.out.println(fibonacci(fibonacci_num_to_calculate+n))
+                System.out.println(fibonacci(fibonacci_num_to_calculate + n))
         );
     }
 
